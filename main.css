@@ -8,6 +8,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    position: sticky;
+    background-color: #fff;
+    top: 0;
+    z-index: 1;
 }
 
 .header__logo {
@@ -43,14 +47,21 @@ button:hover {
     transition: background-color 0.3s ease-in;
 }
 
+@keyframes rotation {
+    0% {transform: rotate(0);}
+    100% {transform: rotate(360deg);}
+}
+
 .img__sun {
-      width: 100px;
-      height: 100px;
-  }
+    width: 100px;
+    height: 100px;
+    animation: rotation 10s linear infinite;
+    position:absolute;
+}
 
 .img__solar-panel {
-      width: 500px;
-  }
+    width: 500px;
+}
 
 .about {
     display: flex;
@@ -141,7 +152,7 @@ button:hover {
     font-size: 18px;
     color: #213053;
     height: 60px;
-    padding: 0px 20px;
+    padding: 0 20px;
     border-radius: 15px;
     border: none;
     appearance: none;
@@ -190,4 +201,81 @@ footer {
     margin-top: 40px;
     text-align: center;
     opacity: 0.5;
+}
+
+@media (max-width: 720px) {
+    body, header, section, footer {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .about h1 {
+        font-size: 36px; 
+        line-height: 40px;
+    }
+
+    .img__sun {
+        width: 75px;
+        height: 75px;
+      }
+    
+    .img__solar-panel {
+        width: 280px;
+      }
+  }
+
+@media (max-width: 320px) {
+    header {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .header__logo {
+        height: 20px;
+    }
+
+    header a {
+        margin-right: 10px;
+    } 
+
+    .about {
+        flex-direction: column-reverse;
+        padding: 50px 10px;
+    }
+
+    .about h1 {
+        font-size: 36px; 
+        line-height: 40px;
+    }
+
+    .form h1 {
+        font-size: 36px; 
+        line-height: 40px;
+    }
+
+    .form {
+        padding: 50px 10px;
+    }
+
+    .form__container {
+        width: 100%;
+        padding: 50px 10px;
+    }
+
+    .img__sun {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .img__solar-panel {
+        width: 280px;
+    }
+
+    footer {
+        padding: 50px 10px;
+    }
+
+    .footer__container {
+        flex-direction: column;
+    }
 }
