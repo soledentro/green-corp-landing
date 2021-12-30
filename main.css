@@ -63,6 +63,12 @@ button:hover {
     width: 500px;
 }
 
+@keyframes animate__animated {
+    0% {opacity: 0%;}
+    50% {opacity: 70%;}
+    100% {opacity: 100%;}
+}
+
 .about {
     display: flex;
     align-items: center;
@@ -72,6 +78,7 @@ button:hover {
     background: url('img/back.png') no-repeat;
     background-position: center;
     background-size: cover;
+    animation: animate__animated 2s linear 1;
 }
 
 .about h1 {
@@ -226,8 +233,7 @@ footer {
 
 @media (max-width: 320px) {
     header {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding: 5px;
     }
 
     .header__logo {
